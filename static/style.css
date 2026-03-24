@@ -1,4 +1,6 @@
-/* THEME VARIABLES */
+/* ===================== */
+/* 🎨 THEME VARIABLES */
+/* ===================== */
 :root {
     --bg: #020617;
     --card: rgba(30, 41, 59, 0.7);
@@ -15,14 +17,18 @@ body.light {
     --sub: #475569;
 }
 
+/* ===================== */
 /* RESET */
+/* ===================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===================== */
 /* BASE */
+/* ===================== */
 body::before {
     content: "";
     position: fixed;
@@ -40,53 +46,60 @@ body {
     transition: 0.3s;
 }
 
+/* ===================== */
 /* HEADER */
+/* ===================== */
 .header {
     text-align: center;
     margin-bottom: 24px;
     position: relative;
+    padding-top: 10px;
 }
 
-/* FIX TOGGLE */
+/* TOGGLE FIX */
 .theme-toggle {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 12px;
+    top: 0;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
     padding: 6px 10px;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
-    backdrop-filter: blur(8px);
 }
 
 /* TEXT */
 h1 {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 700;
 }
 
 .subtitle {
     color: var(--sub);
+    font-size: 14px;
 }
 
-/* BADGE */
 .badge {
+    margin-top: 6px;
     font-size: 12px;
     color: var(--primary);
 }
 
-/* CONTAINER (RESPONSIVE FIX) */
+/* ===================== */
+/* CONTAINER */
+/* ===================== */
 .container {
     width: 100%;
     max-width: 480px;
     margin: auto;
 }
 
+/* ===================== */
 /* CARD */
+/* ===================== */
 .card {
-    background: var(--card); /* FIX */
+    background: var(--card);
     backdrop-filter: blur(12px);
     padding: 18px;
     border-radius: 16px;
@@ -94,7 +107,9 @@ h1 {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
+/* ===================== */
 /* INPUT */
+/* ===================== */
 input {
     width: 100%;
     padding: 14px;
@@ -114,7 +129,9 @@ input:focus {
     box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
 }
 
+/* ===================== */
 /* BUTTON */
+/* ===================== */
 button {
     width: 100%;
     padding: 14px;
@@ -127,23 +144,23 @@ button {
     transition: 0.2s;
 }
 
-/* hover desktop */
-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(59,130,246,0.3);
-}
-
-/* active mobile */
 button:active {
     transform: scale(0.97);
 }
 
-/* SECONDARY BUTTON */
-.secondary-btn {
-    background: #334155;
+button:hover {
+    transform: translateY(-1px);
 }
 
+/* SECONDARY */
+.secondary-btn {
+    background: #334155;
+    margin-top: 8px;
+}
+
+/* ===================== */
 /* RESULT */
+/* ===================== */
 .result {
     margin-top: 20px;
     padding: 14px;
@@ -155,21 +172,23 @@ button:active {
     animation: fadeIn 0.3s ease;
 }
 
-/* VIDEO */
+/* VIDEO FIX */
 video {
     width: 100%;
     height: auto;
     max-height: 60vh;
     border-radius: 12px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
-/* DOWNLOAD BUTTON */
+/* DOWNLOAD */
 .download-btn {
     background: linear-gradient(135deg, #10b981, #059669);
 }
 
+/* ===================== */
 /* ERROR */
+/* ===================== */
 .error {
     margin-top: 10px;
     color: #f87171;
@@ -177,12 +196,9 @@ video {
     text-align: center;
 }
 
-/* HIDDEN */
-.hidden {
-    display: none;
-}
-
+/* ===================== */
 /* DESCRIPTION */
+/* ===================== */
 .description {
     margin-top: 30px;
     font-size: 14px;
@@ -194,11 +210,9 @@ video {
     margin-top: 16px;
 }
 
-.description ol {
-    padding-left: 18px;
-}
-
+/* ===================== */
 /* FOOTER */
+/* ===================== */
 .footer {
     text-align: center;
     margin-top: 40px;
@@ -206,7 +220,9 @@ video {
     color: #64748b;
 }
 
+/* ===================== */
 /* LOADER */
+/* ===================== */
 .loader {
     margin: 15px auto;
     width: 30px;
@@ -217,7 +233,9 @@ video {
     animation: spin 1s linear infinite;
 }
 
+/* ===================== */
 /* ANIMATION */
+/* ===================== */
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
@@ -234,7 +252,7 @@ video {
 }
 
 /* ===================== */
-/* 📲 TABLET */
+/* TABLET */
 /* ===================== */
 @media (min-width: 768px) {
     .container {
@@ -244,10 +262,14 @@ video {
     .card {
         padding: 22px;
     }
+
+    h1 {
+        font-size: 28px;
+    }
 }
 
 /* ===================== */
-/* 💻 DESKTOP */
+/* DESKTOP */
 /* ===================== */
 @media (min-width: 1024px) {
     body {
