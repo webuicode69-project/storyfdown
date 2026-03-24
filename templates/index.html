@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- BASIC -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Download Story Facebook Gratis - StoryFDown</title>
+    <meta name="description" content="Download story Facebook dengan mudah, cepat, dan gratis tanpa aplikasi. StoryFDown membantu Anda menyimpan video story FB dalam kualitas terbaik.">
+    <meta name="keywords" content="download story facebook, fb story downloader, save facebook story, download video fb">
+    <meta name="author" content="StoryFDown">
+
+    <!-- OPEN GRAPH (buat share ke FB/WA) -->
+    <meta property="og:title" content="StoryFDown - Download Story Facebook">
+    <meta property="og:description" content="Download story Facebook dengan cepat dan gratis tanpa aplikasi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:image" content="https://yourdomain.com/preview.png">
+
+    <!-- FAVICON -->
+    <link rel="icon" href="/static/favicon.ico">
+
+    <!-- CSS (Flask friendly) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <h1>StoryFDown</h1>
+    <p class="subtitle">Download story Facebook dengan cepat & gratis</p>
+    <!-- 🌗 toggle theme -->
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+
+    <p class="badge">⚡ Fast • Gratis • Tanpa Login</p>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <input type="text" id="urlInput" placeholder="Tempel link story Facebook di sini...">
+        <button id="downloadBtn">Download Sekarang</button>
+         <!-- 📋 auto paste -->
+        <button id="pasteBtn" class="secondary-btn">📋 Tempel dari Clipboard</button>
+
+
+        <!-- spinner -->
+        <div id="loader" class="loader hidden"></div>
+
+        <p id="errorMsg" class="error hidden"></p>
+    </section>
+
+    <section id="result" class="result hidden">
+        <video id="videoPreview" controls></video>
+        <a id="downloadLink" href="#" download>
+            <button class="download-btn">Download Video</button>
+        </a>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="description">
+        <h2>Apa itu StoryFDown?</h2>
+        <p>
+            <strong>StoryFDown</strong> adalah tools online gratis untuk mengunduh story Facebook yang biasanya hanya bersifat 24 jam
+            tanpa aplikasi tambahan. Cukup tempel link story, dan video akan langsung tersedia untuk diunduh.
+        </p>
+
+        <h2>Cara Download Story Facebook</h2>
+        <ol>
+            <li>Salin link story Facebook</li>
+            <li>Tempel di kolom input</li>
+            <li>Klik tombol download</li>
+            <li>Unduh video dengan mudah</li>
+        </ol>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>© 2026 StoryFDown - All rights reserved</p>
+</footer>
+</body>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</html>
