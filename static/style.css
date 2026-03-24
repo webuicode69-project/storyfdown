@@ -15,24 +15,6 @@ body.light {
     --sub: #475569;
 }
 
-.theme-toggle {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 6px 10px;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-}
-/* BADGE */
-.badge {
-    font-size: 12px;
-    color: var(--primary);
-}
-
 /* RESET */
 * {
     margin: 0;
@@ -57,33 +39,54 @@ body {
     line-height: 1.6;
     transition: 0.3s;
 }
+
 /* HEADER */
 .header {
     text-align: center;
     margin-bottom: 24px;
-    position: relative; /* penting */
+    position: relative;
 }
 
+/* FIX TOGGLE */
+.theme-toggle {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+}
+
+/* TEXT */
 h1 {
     font-size: 26px;
     font-weight: 700;
-    letter-spacing: 0.5px;
 }
 
 .subtitle {
     color: var(--sub);
 }
 
+/* BADGE */
+.badge {
+    font-size: 12px;
+    color: var(--primary);
+}
 
-/* CONTAINER */
+/* CONTAINER (RESPONSIVE FIX) */
 .container {
+    width: 100%;
     max-width: 480px;
     margin: auto;
 }
 
 /* CARD */
 .card {
-    background: var(--bg);
+    background: var(--card); /* FIX */
     backdrop-filter: blur(12px);
     padding: 18px;
     border-radius: 16px;
@@ -98,9 +101,8 @@ input {
     border-radius: 12px;
     border: 1px solid #334155;
     margin-bottom: 12px;
-    background:var(--bg);
+    background: var(--bg);
     color: var(--text);
-    transition: 0.2s;
 }
 
 input::placeholder {
@@ -108,7 +110,7 @@ input::placeholder {
 }
 
 input:focus {
-    border-color: #3b82f6;
+    border-color: var(--primary);
     box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
 }
 
@@ -118,8 +120,8 @@ button {
     padding: 14px;
     border-radius: 12px;
     border: none;
-    background: var(--bg);
-    color: var(--text);
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
@@ -136,13 +138,9 @@ button:active {
     transform: scale(0.97);
 }
 
-/* ERROR */
-.error {
-    margin-top: 10px;
-    color: var(--text);
-
-    font-size: 14px;
-    text-align: center;
+/* SECONDARY BUTTON */
+.secondary-btn {
+    background: #334155;
 }
 
 /* RESULT */
@@ -150,51 +148,45 @@ button:active {
     margin-top: 20px;
     padding: 14px;
     border-radius: 14px;
-    background: var(--bg);
-    border: 1px solid rgba(255,255,255,0.05);
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     animation: fadeIn 0.3s ease;
-}
-
-.hidden {
-    display: none;
 }
 
 /* VIDEO */
 video {
     width: 100%;
+    height: auto;
+    max-height: 60vh;
     border-radius: 12px;
-    margin-top: 10px;
+    object-fit: cover;
 }
 
-/* DOWNLOAD */
+/* DOWNLOAD BUTTON */
 .download-btn {
-    margin-top: 12px;
-    background: var(--bg);
+    background: linear-gradient(135deg, #10b981, #059669);
 }
 
-
-/* BUTTON */
-#themeToggle {
-    width: 10%;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    background: var(--bg);
-    color: var(--text);
-    font-weight: 600;
-    margin-top: 8px;
+/* ERROR */
+.error {
+    margin-top: 10px;
+    color: #f87171;
+    font-size: 14px;
+    text-align: center;
 }
 
-/* SECONDARY BUTTON */
-.secondary-btn {
-    background: var(--bg);
+/* HIDDEN */
+.hidden {
+    display: none;
 }
 
 /* DESCRIPTION */
 .description {
     margin-top: 30px;
     font-size: 14px;
-    color: var(--text)
+    color: var(--text);
 }
 
 .description h2 {
@@ -213,6 +205,7 @@ video {
     font-size: 12px;
     color: #64748b;
 }
+
 /* LOADER */
 .loader {
     margin: 15px auto;
@@ -229,7 +222,6 @@ video {
     to { transform: rotate(360deg); }
 }
 
-/* ANIMATION */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -238,5 +230,34 @@ video {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* ===================== */
+/* 📲 TABLET */
+/* ===================== */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+}
+
+/* ===================== */
+/* 💻 DESKTOP */
+/* ===================== */
+@media (min-width: 1024px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 720px;
     }
 }
