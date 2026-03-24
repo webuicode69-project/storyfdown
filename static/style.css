@@ -1,6 +1,4 @@
-/* ===================== */
-/* 🎨 THEME VARIABLES */
-/* ===================== */
+/* THEME VARIABLES */
 :root {
     --bg: #020617;
     --card: rgba(30, 41, 59, 0.7);
@@ -17,18 +15,32 @@ body.light {
     --sub: #475569;
 }
 
-/* ===================== */
+.theme-toggle {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+}
+/* BADGE */
+.badge {
+    font-size: 12px;
+    color: var(--primary);
+}
+
 /* RESET */
-/* ===================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ===================== */
 /* BASE */
-/* ===================== */
 body::before {
     content: "";
     position: fixed;
@@ -45,62 +57,33 @@ body {
     line-height: 1.6;
     transition: 0.3s;
 }
-
-/* ===================== */
 /* HEADER */
-/* ===================== */
 .header {
     text-align: center;
     margin-bottom: 24px;
-    position: relative;
-    padding-top: 10px;
+    position: relative; /* penting */
 }
 
-/* TOGGLE FIX */
-.theme-toggle {
-    position: absolute;
-    right: 12px;
-    top: 0;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 6px 10px;
-    border-radius: 10px;
-    font-size: 14px;
-    cursor: pointer;
-    width: 10%
-}
-
-/* TEXT */
 h1 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .subtitle {
     color: var(--sub);
-    font-size: 14px;
 }
 
-.badge {
-    margin-top: 6px;
-    font-size: 12px;
-    color: var(--primary);
-}
 
-/* ===================== */
 /* CONTAINER */
-/* ===================== */
 .container {
-    width: 100%;
     max-width: 480px;
     margin: auto;
 }
 
-/* ===================== */
 /* CARD */
-/* ===================== */
 .card {
-    background: var(--card);
+    background: var(--bg);
     backdrop-filter: blur(12px);
     padding: 18px;
     border-radius: 16px;
@@ -108,17 +91,16 @@ h1 {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* ===================== */
 /* INPUT */
-/* ===================== */
 input {
     width: 100%;
     padding: 14px;
     border-radius: 12px;
     border: 1px solid #334155;
     margin-bottom: 12px;
-    background: var(--bg);
+    background:var(--bg);
     color: var(--text);
+    transition: 0.2s;
 }
 
 input::placeholder {
@@ -126,84 +108,93 @@ input::placeholder {
 }
 
 input:focus {
-    border-color: var(--primary);
+    border-color: #3b82f6;
     box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
 }
 
-/* ===================== */
 /* BUTTON */
-/* ===================== */
 button {
     width: 100%;
     padding: 14px;
     border-radius: 12px;
     border: none;
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: white;
+    background: var(--bg);
+    color: var(--text);
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
 }
 
+/* hover desktop */
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+}
+
+/* active mobile */
 button:active {
     transform: scale(0.97);
 }
 
-button:hover {
-    transform: translateY(-1px);
-}
-
-/* SECONDARY */
-.secondary-btn {
-    background: #334155;
-    margin-top: 8px;
-}
-
-/* ===================== */
-/* RESULT */
-/* ===================== */
-.result {
-    margin-top: 20px;
-    padding: 14px;
-    border-radius: 14px;
-    background: var(--card);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    animation: fadeIn 0.3s ease;
-}
-
-/* VIDEO FIX */
-video {
-    width: 100%;
-    height: auto;
-    max-height: 60vh;
-    border-radius: 12px;
-    object-fit: contain;
-}
-
-/* DOWNLOAD */
-.download-btn {
-    background: linear-gradient(135deg, #10b981, #059669);
-}
-
-/* ===================== */
 /* ERROR */
-/* ===================== */
 .error {
     margin-top: 10px;
-    color: #f87171;
+    color: var(--text);
+
     font-size: 14px;
     text-align: center;
 }
 
-/* ===================== */
+/* RESULT */
+.result {
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 14px;
+    background: var(--bg);
+    border: 1px solid rgba(255,255,255,0.05);
+    animation: fadeIn 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/* VIDEO */
+video {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+/* DOWNLOAD */
+.download-btn {
+    margin-top: 12px;
+    background: var(--bg);
+}
+
+
+/* BUTTON */
+#themeToggle {
+    width: 10%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: var(--bg);
+    color: var(--text);
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* SECONDARY BUTTON */
+.secondary-btn {
+    background: var(--bg);
+}
+
 /* DESCRIPTION */
-/* ===================== */
 .description {
     margin-top: 30px;
     font-size: 14px;
-    color: var(--text);
+    color: var(--text)
 }
 
 .description h2 {
@@ -211,19 +202,18 @@ video {
     margin-top: 16px;
 }
 
-/* ===================== */
+.description ol {
+    padding-left: 18px;
+}
+
 /* FOOTER */
-/* ===================== */
 .footer {
     text-align: center;
     margin-top: 40px;
     font-size: 12px;
     color: #64748b;
 }
-
-/* ===================== */
 /* LOADER */
-/* ===================== */
 .loader {
     margin: 15px auto;
     width: 30px;
@@ -234,13 +224,12 @@ video {
     animation: spin 1s linear infinite;
 }
 
-/* ===================== */
 /* ANIMATION */
-/* ===================== */
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
 
+/* ANIMATION */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -249,38 +238,5 @@ video {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-/* ===================== */
-/* TABLET */
-/* ===================== */
-@media (min-width: 768px) {
-    .container {
-        max-width: 600px;
-    }
-
-    .card {
-        padding: 22px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-}
-
-/* ===================== */
-/* DESKTOP */
-/* ===================== */
-@media (min-width: 1024px) {
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-
-    .container {
-        max-width: 720px;
     }
 }
