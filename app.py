@@ -12,10 +12,17 @@ Allow: /
 
 Sitemap: https://bot-lwq9.onrender.com/sitemap.xml
 """, 200, {'Content-Type': 'text/plain'}
-
-@app.route('/sitemap.xml')
+    
+@app.route("/sitemap.xml")
 def sitemap():
-    return send_from_directory('static', 'sitemap.xml')
+    return """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://bot-lwq9.onrender.com/</loc>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+""", 200, {'Content-Type': 'application/xml'}
 
 @app.route("/")
 def index():
