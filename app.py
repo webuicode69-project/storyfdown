@@ -5,9 +5,13 @@ from scraper import get_video_url
 
 app = Flask(__name__)
 
-@app.route('/robots.txt')
+@app.route("/robots.txt")
 def robots():
-    return send_from_directory('static', 'robots.txt')
+    return """User-agent: *
+Allow: /
+
+Sitemap: https://bot-lwq9.onrender.com/sitemap.xml
+""", 200, {'Content-Type': 'text/plain'}
 
 @app.route('/sitemap.xml')
 def sitemap():
